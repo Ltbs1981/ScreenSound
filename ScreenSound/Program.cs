@@ -44,6 +44,7 @@ void ExibirLogo()
 ╚═════╝░░╚════╝░╚═╝░░╚═╝╚══════╝╚══════╝╚═╝░░╚══╝  ╚═════╝░░╚════╝░░╚═════╝░╚═╝░░╚══╝╚═════╝░
 ");
     Console.WriteLine("Boas vindas ao Screen Sound 3.0!");
+    Console.WriteLine("Indo para um outro nível!");
 }
 
 void ExibirOpcoesDoMenu()
