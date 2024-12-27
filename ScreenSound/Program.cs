@@ -2,22 +2,6 @@
 using ScreenSound.Menus;
 using ScreenSound.Modelos;
 
-try
-{
-    var connection = new Connection();
-    var listaArtistas = connection.Listar();
-
-    foreach (var artista in listaArtistas)
-    {
-        Console.WriteLine(artista);
-    }
-}
-catch (Exception ex)
-{
-    Console.WriteLine(ex.Message);
-}
-return;
-
 Artista ira = new Artista("Ira!", "Banda Ira!");
 Artista beatles = new("The Beatles", "Banda The Beatles");
 
@@ -44,7 +28,6 @@ void ExibirLogo()
 ╚═════╝░░╚════╝░╚═╝░░╚═╝╚══════╝╚══════╝╚═╝░░╚══╝  ╚═════╝░░╚════╝░░╚═════╝░╚═╝░░╚══╝╚═════╝░
 ");
     Console.WriteLine("Boas vindas ao Screen Sound 3.0!");
-    Console.WriteLine("Indo para um outro nível!");
 }
 
 void ExibirOpcoesDoMenu()
@@ -65,7 +48,7 @@ void ExibirOpcoesDoMenu()
         Menu menuASerExibido = opcoes[opcaoEscolhidaNumerica];
         menuASerExibido.Executar(artistasRegistrados);
         if (opcaoEscolhidaNumerica > 0) ExibirOpcoesDoMenu();
-    } 
+    }
     else
     {
         Console.WriteLine("Opção inválida");

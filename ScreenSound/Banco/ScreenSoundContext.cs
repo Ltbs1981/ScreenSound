@@ -1,17 +1,18 @@
 ﻿using Microsoft.Data.SqlClient;
+using Microsoft.EntityFrameworkCore;
 using ScreenSound.Modelos;
 namespace ScreenSound.Banco
 {
-    internal class Connection
+    internal class ScreenSoundContext: DbContext
     {
-        private string connectionString = "Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=screensound;Integrated Security=True;Encrypt=False;Trust Server Certificate=False;Application Intent=ReadWrite;Multi Subnet Failover=False";
+        private string connectionString = "Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=ScreenSound;Integrated Security=True;Encrypt=True;Trust Server Certificate=False;Application Intent=ReadWrite;Multi Subnet Failover=False\r\n";
 
         public SqlConnection ObterConexao()
         {
             return new SqlConnection(connectionString);
         }
         public IEnumerable<Artista> Listar()
-        {
+                        {
             var lista = new List<Artista>();
             using var connection = ObterConexao();
             connection.Open();
